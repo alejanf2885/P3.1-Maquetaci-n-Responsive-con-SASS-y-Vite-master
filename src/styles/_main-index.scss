@@ -1,0 +1,114 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "button" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  .news {
+    text-align: center;
+    background-color: $color-principal2;
+    padding: $padding-news;
+    border-top: 1px solid $color-principal1;
+    border-bottom: 1px solid $color-principal1;
+
+    h3 {
+      font-family: $font-montserrat-bold;
+      font-size: $font-size-h3;
+      color: $color-principal1;
+    }
+  }
+
+  .descubre {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(../assets/img/portada.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: $height-img-fondo-long;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+
+      h2 {
+        font-family: $font-montserrat-bold;
+        font-size: $font-size-h2;
+        color: $color-secundario;
+        -webkit-text-stroke: 1px black;
+      }
+
+      button {
+        @include button($color-principal1, $color-principal2, $color-secundario); 
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @include respond-to("small") {
+    .descubre {
+      height: 300px;
+    }
+
+    .container {
+      h2 {
+        font-size: $font-size-h3;
+      }
+
+      button {
+        @include button($color-secundario, $color-principal2, $color-principal1);
+        border: 1px solid $color-secundario;
+        font-size: $font-size-medium;
+      }
+    }
+  }
+
+  @include respond-to("medium") {
+    .descubre {
+      height: 400px;
+    }
+
+    .container {
+      h2 {
+        font-size: $font-size-h2;
+      }
+
+      button {
+        @include button($color-secundario, $color-principal2, $color-principal1); 
+        border: 1px solid $color-secundario;
+        font-size: $font-size-medium;
+      }
+    }
+  }
+
+  @include respond-to("large") {
+    .descubre {
+      height: $height-img-fondo-long;
+    }
+
+    .container {
+      h2 {
+        font-size: $font-size-h2;
+      }
+
+      button {
+        @include button($color-principal1, $color-principal2, $color-secundario);
+        font-size: $font-size-large;
+      }
+    }
+  }
+}

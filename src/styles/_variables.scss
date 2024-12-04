@@ -1,0 +1,57 @@
+/* Colores */
+$color-neutro1: #b0bec5;
+$color-neutro2: #424242;
+$color-principal1: #000000;
+$color-principal2: #ff0000;
+$color-secundario: #ffffff;
+
+
+/* Fuentes */
+$font-montserrat-bold: 'Montserrat Bold', sans-serif;
+$font-roboto-light: 'Roboto Light', sans-serif;
+
+
+/* Tamaños */
+$tamaño-iconos: 1.25rem;
+$tamaño-iconos-sm: 0.75rem;
+$font-size-h1: 68px;
+$font-size-h2: 40px;
+$font-size-h3: 32px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-weight-h: 700;
+$width-container: 90%;
+$width-container-max: 1440px;
+$padding-container: 1rem  2rem;
+$width-img-desktop: 200px;
+$width-img-tablet:150px;
+$width-img-mobile: 150px;
+$height-img-desktop: 150px;
+$height-img-tablet: 150px;
+$height-img-mobile: 150px;
+$height-logo:100px;
+
+$padding-news: 1.5rem;
+
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 24px; 
+
+$max-width-small: 599px; 
+$max-width-medium: 1199px; 
+$max-width-large: 1440px; 
+$padding-a-header: 1rem 2rem;
+
+$border-radius: 10px;
+
+
+$width-img-fondo-long:1440px;
+$height-img-fondo-long: 500px;
+
+
+
+$breakpoints: (
+  "small": "(max-width: 599px)",  
+  "medium": "(min-width: 600px) and (max-width: 1199px)",   
+  "large": "(min-width: 1200px)"
+);
