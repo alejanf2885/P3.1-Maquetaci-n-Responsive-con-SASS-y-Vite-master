@@ -1,0 +1,15 @@
+@use 'sass:map'; 
+@use 'variables' as *; 
+
+@mixin respond-to($breakpoint) {
+  $query: map.get($breakpoints, $breakpoint);
+
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+           + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}

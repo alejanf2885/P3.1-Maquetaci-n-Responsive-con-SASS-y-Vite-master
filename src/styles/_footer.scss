@@ -1,0 +1,109 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+footer {
+  border-top: 1px solid $color-principal1;
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: $width-container;
+    margin: 0 auto;
+    padding: $padding-container;
+    
+  
+    .footer-section {
+      text-align: center;
+      margin: 1rem;
+
+      a {
+        color: $color-neutro2;
+        text-decoration: none;
+        font-size: $tamaño-iconos;
+        margin: 0.5rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $color-principal1;
+        }
+      }
+
+      h2 {
+        color: $color-principal1;
+        font-size: $font-size-h3;
+        font-weight: $font-weight-h;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $color-principal1;
+        font-size: $font-size-h4;
+        font-weight: $font-weight-h;
+      }
+    }
+  }
+
+  @include respond-to("small") {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .footer-section {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: $font-size-h5;
+    }
+
+    p {
+      font-size: $font-size-h5; 
+    }
+  }
+
+  @include respond-to("medium") {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .footer-section {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: $font-size-h5; 
+    }
+
+    p {
+      font-size: $font-size-h5;
+    }
+  }
+
+  @include respond-to("large") {
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      width: 30%;
+    }
+
+    h2 {
+      font-size: $font-size-h4; 
+    }
+
+    p {
+      font-size: $font-size-h4;
+    }
+  }
+}

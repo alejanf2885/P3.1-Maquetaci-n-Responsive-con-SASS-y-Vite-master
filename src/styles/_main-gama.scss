@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gama {
+  padding: $padding-container;
+
+  .news {
+    margin-bottom: 2rem;
+    width: 100%; 
+    text-align: center;
+    background-color: $color-principal2;
+    padding: $padding-news;
+    border-top: 1px solid $color-principal1;
+    border-bottom: 1px solid $color-principal1;
+
+    h3 {
+      font-family: $font-montserrat-bold;
+      font-size: $font-size-h3;
+      color: $color-principal1;
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1rem; 
+
+    .card {
+      background-color: $color-secundario;
+      border: 1px solid $color-principal1;
+      border-radius: $border-radius;
+      padding: 1rem;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+      }
+
+      h3 {
+        font-family: $font-montserrat-bold;
+        font-size: $font-size-h3;
+        color: $color-principal1;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  @include respond-to("small") {
+    .cards {
+      grid-template-columns: 1fr; 
+    }
+  }
+
+  @include respond-to("medium") {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond-to("large") {
+    .cards {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+}
